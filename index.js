@@ -19,7 +19,7 @@ const convert = (text, options = {}) => new Promise((yay, nay) => {
 			}, (error) => nay('pinyin-converter -> ' + error))
 		}
 		if (type === 2 || type === 3) {
-			splitPinyin(text, options.keepSpacing).then((words) => {
+			splitPinyin(text, options).then((words) => {
 				if (options.numbered && type !== 3) {
 					words = words.map(utils.markToNumber)
 				}
@@ -34,7 +34,7 @@ const convert = (text, options = {}) => new Promise((yay, nay) => {
 						words = words.map(utils.numberToMark)
 					}
 				}
-				yay(words.join(options.keepSpacing ? '' : ' '))
+				yay(words.join(options.keepSpaces ? '' : ' '))
 			}, (error) => nay('pinyin-converter -> ' + error))
 		}
 	}, (error) => nay('pinyin-converter -> ' + error))
