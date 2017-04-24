@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/pepebecker/pinyin-converter.git"
+    "url": "https://github.com/pepebecker/pinyin-converter.git"
   },
   "author": "Pepe Becker <mail@pepebecker.com> (http://pepebecker.com)",
   "license": "ISC",
@@ -17,10 +17,10 @@
   },
   "homepage": "https://github.com/pepebecker/pinyin-converter#readme",
   "dependencies": {
-    "hanzi-to-pinyin": "git+https://git@github.com/pepebecker/hanzi-to-pinyin.git",
-    "pinyin-or-hanzi": "git+https://git@github.com/pepebecker/pinyin-or-hanzi.git",
-    "pinyin-split": "git+https://git@github.com/pepebecker/pinyin-split.git",
-    "pinyin-utils": "git+https://git@github.com/pepebecker/pinyin-utils.git",
+    "hanzi-to-pinyin": "https://github.com/pepebecker/hanzi-to-pinyin.git",
+    "pinyin-or-hanzi": "https://github.com/pepebecker/pinyin-or-hanzi.git",
+    "pinyin-split": "https://github.com/pepebecker/pinyin-split.git",
+    "pinyin-utils": "https://github.com/pepebecker/pinyin-utils.git",
     "so": "^1.0.1"
   },
   "devDependencies": {
