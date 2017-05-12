@@ -17,10 +17,10 @@
   },
   "homepage": "https://github.com/pepebecker/pinyin-converter#readme",
   "dependencies": {
-    "hanzi-to-pinyin": "https://github.com/pepebecker/hanzi-to-pinyin.git",
-    "pinyin-or-hanzi": "https://github.com/pepebecker/pinyin-or-hanzi.git",
-    "pinyin-split": "https://github.com/pepebecker/pinyin-split.git",
-    "pinyin-utils": "https://github.com/pepebecker/pinyin-utils.git",
+    "hanzi-to-pinyin": "pepebecker/hanzi-to-pinyin",
+    "pinyin-or-hanzi": "pepebecker/pinyin-or-hanzi",
+    "pinyin-split": "pepebecker/pinyin-split",
+    "pinyin-utils": "pepebecker/pinyin-utils",
     "so": "^1.0.1"
   },
   "devDependencies": {
