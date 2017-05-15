@@ -13,6 +13,14 @@
 npm install pinyin-converter@pepebecker/pinyin-converter
 ```
 
+## Related
+
+- [`pinyin-utils`](https://github.com/pepebecker/pinyin-utils)
+- [`pinyin-split`](https://github.com/pepebecker/pinyin-split)
+- [`find-hanzi`](https://github.com/pepebecker/find-hanzi)
+- [`pinyin-or-hanzi`](https://github.com/pepebecker/pinyin-or-hanzi)
+- [`hanzi-to-pinyin`](https://github.com/pepebecker/hanzi-to-pinyin)
+
 ## Usage
 
 ```js
