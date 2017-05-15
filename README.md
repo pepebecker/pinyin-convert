@@ -1,16 +1,16 @@
-# Pinyin Converter
+# Pinyin Convert
 
-[![Travis Build Status](https://travis-ci.org/pepebecker/pinyin-converter.svg)](https://travis-ci.org/pepebecker/pinyin-converter)
-[![Coverage Status](https://coveralls.io/repos/github/pepebecker/pinyin-converter/badge.svg)](https://coveralls.io/github/pepebecker/pinyin-converter)
-[![dependency status](https://img.shields.io/david/pepebecker/pinyin-converter.svg)](https://david-dm.org/pepebecker/pinyin-converter)
-[![dev dependency status](https://img.shields.io/david/dev/pepebecker/pinyin-converter.svg)](https://david-dm.org/pepebecker/pinyin-converter#info=devDependencies)
-[![MIT-licensed](https://img.shields.io/github/license/pepebecker/pinyin-converter.svg)](https://opensource.org/licenses/MIT)
+[![Travis Build Status](https://travis-ci.org/pepebecker/pinyin-convert.svg)](https://travis-ci.org/pepebecker/pinyin-convert)
+[![Coverage Status](https://coveralls.io/repos/github/pepebecker/pinyin-convert/badge.svg)](https://coveralls.io/github/pepebecker/pinyin-convert)
+[![dependency status](https://img.shields.io/david/pepebecker/pinyin-convert.svg)](https://david-dm.org/pepebecker/pinyin-convert)
+[![dev dependency status](https://img.shields.io/david/dev/pepebecker/pinyin-convert.svg)](https://david-dm.org/pepebecker/pinyin-convert#info=devDependencies)
+[![MIT-licensed](https://img.shields.io/github/license/pepebecker/pinyin-convert.svg)](https://opensource.org/licenses/MIT)
 [![chat on gitter](https://badges.gitter.im/pepebecker.svg)](https://gitter.im/pepebecker)
 
 ## Install
 
 ```shell
-npm install pinyin-converter@pepebecker/pinyin-converter
+npm install pinyin-convert@pepebecker/pinyin-convert
 ```
 
 ## Related
@@ -24,7 +24,7 @@ npm install pinyin-converter@pepebecker/pinyin-converter
 ## Usage
 
 ```js
-const convert = require('pinyin-converter')
+const convert = require('pinyin-convert')
 
 convert('wǒ de māo xǐhuān hē niúnǎi', {keepSpaces: true})
 .then(console.log) // wo3 de mao1 xi3huan1 he1 niu2nai3
@@ -45,4 +45,4 @@ convert('我的猫喜欢喝牛奶', {numbered: true})
 
 ## Contributing
 
-If you **have a question**, **found a bug** or want to **propose a feature**, have a look at [the issues page](https://github.com/pepebecker/pinyin-converter/issues).
+If you **have a question**, **found a bug** or want to **propose a feature**, have a look at [the issues page](https://github.com/pepebecker/pinyin-convert/issues).
