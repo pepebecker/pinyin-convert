@@ -13,14 +13,6 @@
 npm install pinyin-convert@pepebecker/pinyin-convert
 ```
 
-## Related
-
-- [`pinyin-utils`](https://github.com/pepebecker/pinyin-utils)
-- [`pinyin-split`](https://github.com/pepebecker/pinyin-split)
-- [`find-hanzi`](https://github.com/pepebecker/find-hanzi)
-- [`pinyin-or-hanzi`](https://github.com/pepebecker/pinyin-or-hanzi)
-- [`hanzi-to-pinyin`](https://github.com/pepebecker/hanzi-to-pinyin)
-
 ## Usage
 
 ```js
@@ -42,6 +34,14 @@ convert('我的猫喜欢喝牛奶', {numbered: true})
 .then(console.log) // wo3 de mao1 xi3 huan1 he1 niu2 nai3
 .catch(console.error)
 ```
+
+## Related
+
+- [`pinyin-utils`](https://github.com/pepebecker/pinyin-utils)
+- [`pinyin-split`](https://github.com/pepebecker/pinyin-split)
+- [`find-hanzi`](https://github.com/pepebecker/find-hanzi)
+- [`pinyin-or-hanzi`](https://github.com/pepebecker/pinyin-or-hanzi)
+- [`hanzi-to-pinyin`](https://github.com/pepebecker/hanzi-to-pinyin)
 
 ## Contributing
 
