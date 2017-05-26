@@ -7,6 +7,9 @@ const utils = require('pinyin-utils')
 
 const convert = (text, options = {}) => new Promise((yay, nay) => {
 	pinyinOrHanzi(text).then((type) => {
+		if (type === 0) {
+			yay(text)
+		}
 		if (type === 1) {
 			hanziToPinyin(text).then((data) => {
 				if (options.numbered) {

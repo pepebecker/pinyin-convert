@@ -23,4 +23,9 @@ describe('Convert', () => {
 			data.should.equal('wo3 de mao1 xi3 huan1 he1 niu2 nai3')
 		})
 	})
+	it('should leave the text the way it is', () => {
+		return convert('wo de mao xihuan he niunai', {keepSpaces: true}).then((data) => {
+			data.should.equal('wo de mao xihuan he niunai')
+		})
+	})
 })
