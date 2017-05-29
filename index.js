@@ -1,5 +1,6 @@
 'use strict'
 
+const hsk = require('hsk-words')
 const hanziToPinyin = require('hanzi-to-pinyin')
 const splitPinyin = require('pinyin-split')
 const pinyinOrHanzi = require('pinyin-or-hanzi')
@@ -11,15 +12,19 @@ const convert = (text, options = {}) => new Promise((yay, nay) => {
 			yay(text)
 		}
 		if (type === 1) {
-			hanziToPinyin(text).then((data) => {
-				if (options.numbered) {
-					let words = data.split(' ')
-					words = words.map(utils.markToNumber)
-					yay(words.join(' '))
-				} else {
-					yay(data)
-				}
-			}, (error) => nay(error))
+			hsk.get(text).then((data) => {
+				yay(data.pinyin)
+			}).catch((err) => {
+				hanziToPinyin(text).then((data) => {
+					if (options.numbered) {
+						let words = data.split(' ')
+						words = words.map(utils.markToNumber)
+						yay(words.join(' '))
+					} else {
+						yay(data)
+					}
+				}).catch(nay)
+			})
 		}
 		if (type === 2 || type === 3) {
 			splitPinyin(text, options).then((words) => {
@@ -38,9 +43,9 @@ const convert = (text, options = {}) => new Promise((yay, nay) => {
 					}
 				}
 				yay(words.join(options.keepSpaces ? '' : ' '))
-			}, (error) => nay(error))
+			}).catch(nay)
 		}
-	}, (error) => nay(error))
+	}).catch(nay)
 })
 
 module.exports = convert
