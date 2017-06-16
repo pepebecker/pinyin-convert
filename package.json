@@ -2,30 +2,30 @@
   "name": "pinyin-convert",
   "version": "1.0.5",
   "description": "Convert Hanzi to Pinyin and convert between Pinyin with tone marks and Pinyin with tone numbers.",
-  "main": "index.js",
-  "scripts": {
-    "test": "mocha",
-    "cover": "istanbul cover _mocha",
-    "coveralls": "npm run cover -- --report lcovonly && cat ./coverage/lcov.info | coveralls"
+  "keywords": [
+    "chinese",
+    "convert",
+    "hanzi",
+    "mandarin",
+    "pinyin",
+    "tone"
+  ],
+  "homepage": "https://github.com/pepebecker/pinyin-convert#readme",
+  "bugs": {
+    "url": "https://github.com/pepebecker/pinyin-convert/issues"
   },
+  "license": "MIT",
+  "author": "Pepe Becker <mail@pepebecker.com> (http://pepebecker.com)",
+  "main": "index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/pepebecker/pinyin-convert.git"
   },
-  "keywords": [
-    "pinyin",
-    "convert",
-    "hanzi",
-    "tone",
-    "chinese",
-    "mandarin"
-  ],
-  "author": "Pepe Becker <mail@pepebecker.com> (http://pepebecker.com)",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/pepebecker/pinyin-convert/issues"
+  "scripts": {
+    "cover": "istanbul cover _mocha",
+    "coveralls": "npm run cover -- --report lcovonly && cat ./coverage/lcov.info | coveralls",
+    "test": "mocha"
   },
-  "homepage": "https://github.com/pepebecker/pinyin-convert#readme",
   "dependencies": {
     "hanzi-to-pinyin": "^1.0.4",
     "pinyin-or-hanzi": "^1.0.3",
@@ -38,5 +38,8 @@
     "mocha": "^3.3.0",
     "mocha-lcov-reporter": "^1.3.0",
     "should": "^11.2.1"
+  },
+  "engines": {
+    "node": "<8.0.0"
   }
 }
