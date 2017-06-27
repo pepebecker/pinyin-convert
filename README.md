@@ -8,6 +8,8 @@
 [![MIT-licensed](https://img.shields.io/github/license/pepebecker/pinyin-convert.svg)](https://opensource.org/licenses/MIT)
 [![chat on gitter](https://badges.gitter.im/pepebecker.svg)](https://gitter.im/pepebecker)
 
+Checkout the [`pinyin-webinterface`](https://github.com/pepebecker/pinyin) which uses this module in the backend.
+
 ## Install
 
 ```shell
