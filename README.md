@@ -10,7 +10,7 @@
 ## Install
 
 ```shell
-npm install pinyin-convert@pepebecker/pinyin-convert
+npm install pinyin-convert
 ```
 
 ## Usage
