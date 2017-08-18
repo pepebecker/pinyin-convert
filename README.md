@@ -1,5 +1,6 @@
 # Pinyin Convert
 
+[![npm version](https://img.shields.io/npm/v/pinyin-convert.svg)](https://www.npmjs.com/package/pinyin-convert)
 [![Travis Build Status](https://travis-ci.org/pepebecker/pinyin-convert.svg)](https://travis-ci.org/pepebecker/pinyin-convert)
 [![Coverage Status](https://coveralls.io/repos/github/pepebecker/pinyin-convert/badge.svg)](https://coveralls.io/github/pepebecker/pinyin-convert)
 [![dependency status](https://img.shields.io/david/pepebecker/pinyin-convert.svg)](https://david-dm.org/pepebecker/pinyin-convert)
