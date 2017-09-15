@@ -27,10 +27,10 @@
   },
   "homepage": "https://github.com/pepebecker/pinyin-convert#readme",
   "dependencies": {
-    "hanzi-to-pinyin": "pepebecker/hanzi-to-pinyin",
-    "pinyin-or-hanzi": "pepebecker/pinyin-or-hanzi",
-    "pinyin-split": "pepebecker/pinyin-split",
-    "pinyin-utils": "pepebecker/pinyin-utils"
+    "hanzi-to-pinyin": "^1.0.2",
+    "pinyin-or-hanzi": "^1.0.2",
+    "pinyin-split": "^1.0.2",
+    "pinyin-utils": "^1.0.2"
   },
   "devDependencies": {
     "coveralls": "^2.13.1",
