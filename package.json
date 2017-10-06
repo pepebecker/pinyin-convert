@@ -28,6 +28,7 @@
   "homepage": "https://github.com/pepebecker/pinyin-convert#readme",
   "dependencies": {
     "hanzi-to-pinyin": "^1.0.3",
+    "hsk-words": "pepebecker/hsk-words",
     "pinyin-or-hanzi": "^1.0.3",
     "pinyin-split": "^1.0.3",
     "pinyin-utils": "^1.0.3"
