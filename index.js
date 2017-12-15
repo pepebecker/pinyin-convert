@@ -5,42 +5,37 @@ const splitPinyin = require('pinyin-split')
 const pinyinOrHanzi = require('pinyin-or-hanzi')
 const utils = require('pinyin-utils')
 
-const convert = (text, options = {}) => new Promise((yay, nay) => {
-	pinyinOrHanzi(text).then((type) => {
-		if (type === 0) {
-			yay(text)
+const convert = async (text, options = {}) => {
+	const type = await pinyinOrHanzi(text)
+	if (type === 'other') {
+		return text
+	}
+	if (type === 'mandarin') {
+		let data = await hanziToPinyin(text, options.numbered)
+		data = data.map(words => {
+			return words.map(word => options.segmented ? word.replace(/\s*/g, '') : word)
+		})
+		return data.map(words => words[0]).join(' ')
+	}
+	if (type.substr(0, 6) ===  'pinyin') {
+		options.keepSpaces = options.segmented
+		let words = await splitPinyin(text, options)
+		if (options.numbered && type !== 'pinyin-numbered') {
+			words = utils.markToNumber(words)
 		}
-		if (type === 1) {
-			hanziToPinyin(text).then((data) => {
-				if (options.numbered) {
-					let words = data.split(' ')
-					words = words.map(utils.markToNumber)
-					yay(words.join(' '))
-				} else {
-					yay(data)
-				}
-			}).catch(nay)
+		else if (options.marked && type !== 'pinyin-marked') {
+			words = utils.numberToMark(words)
 		}
-		if (type === 2 || type === 3) {
-			splitPinyin(text, options).then((words) => {
-				if (options.numbered && type !== 3) {
-					words = words.map(utils.markToNumber)
-				}
-				if (options.marked && type !== 2) {
-					words = words.map(utils.numberToMark)
-				}
-				if (!options.numbered && !options.numbered) {
-					if (type === 2) {
-						words = words.map(utils.markToNumber)
-					}
-					if (type === 3) {
-						words = words.map(utils.numberToMark)
-					}
-				}
-				yay(words.join(options.keepSpaces ? '' : ' '))
-			}).catch(nay)
+		else if (!options.numbered && !options.numbered) {
+			if (type === 'pinyin-marked') {
+				words = utils.markToNumber(words)
+			}
+			if (type === 'pinyin-numbered') {
+				words = utils.numberToMark(words)
+			}
 		}
-	}).catch(nay)
-})
+		return words.join(options.segmented ? '' : ' ')
+	}
+}
 
 module.exports = convert
