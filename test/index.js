@@ -5,22 +5,22 @@ const convert = require('../index')
 describe('Convert Mandarin to Pinyin', () => {
 	it('should convert Mandarin to marked Pinyin (segmented)', () => {
 		return convert('我的猫喜欢喝牛奶', { segmented: true }).then(data => {
-			data.should.equal('wǒ de māo xǐhuan hē niúnǎi')
+			data.should.deepEqual(['wǒ ', ['de', 'dī', 'dí', 'dì'], ' māo xǐhuan ', ['hē', 'hè'], ' niúnǎi'])
 		})
 	})
 	it('should convert Mandarin to numbered Pinyin (segmented)', () => {
 		return convert('我的猫喜欢喝牛奶', { segmented: true, numbered: true }).then(data => {
-			data.should.equal('wo3 de5 mao1 xi3huan5 he1 niu2nai3')
+			data.should.deepEqual(['wo3 ', ['de5', 'di1', 'di2', 'di4'], ' mao1 xi3huan5 ', ['he1', 'he4'], ' niu2nai3'])
 		})
 	})
 	it('should convert Mandarin to marked Pinyin', () => {
 		return convert('我的猫喜欢喝牛奶').then(data => {
-			data.should.equal('wǒ de māo xǐ huan hē niú nǎi')
+			data.should.deepEqual(['wǒ ', ['de', 'dī', 'dí', 'dì'], ' māo xǐ huan ', ['hē', 'hè'], ' niú nǎi'])
 		})
 	})
 	it('should convert Mandarin to numbered Pinyin', () => {
 		return convert('我的猫喜欢喝牛奶', { numbered: true }).then(data => {
-			data.should.equal('wo3 de5 mao1 xi3 huan5 he1 niu2 nai3')
+			data.should.deepEqual(['wo3 ', ['de5', 'di1', 'di2', 'di4'], ' mao1 xi3 huan5 ', ['he1', 'he4'], ' niu2 nai3'])
 		})
 	})
 })

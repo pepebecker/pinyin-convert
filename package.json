@@ -27,7 +27,7 @@
     "test": "mocha"
   },
   "dependencies": {
-    "hanzi-to-pinyin": "^1.0.7",
+    "hanzi-to-pinyin": "^1.0.9",
     "pinyin-or-hanzi": "^1.1.0",
     "pinyin-split": "^1.0.8",
     "pinyin-utils": "^1.0.8"
