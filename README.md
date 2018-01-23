@@ -1,5 +1,7 @@
 # Pinyin Convert
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/pepebecker/pinyin-convert.svg)](https://greenkeeper.io/)
+
 [![npm version](https://img.shields.io/npm/v/pinyin-convert.svg)](https://www.npmjs.com/package/pinyin-convert)
 [![Travis Build Status](https://travis-ci.org/pepebecker/pinyin-convert.svg)](https://travis-ci.org/pepebecker/pinyin-convert)
 [![Coverage Status](https://coveralls.io/repos/github/pepebecker/pinyin-convert/badge.svg)](https://coveralls.io/github/pepebecker/pinyin-convert)
