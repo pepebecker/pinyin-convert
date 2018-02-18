@@ -1,6 +1,6 @@
 {
   "name": "pinyin-convert",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Convert Hanzi to Pinyin and convert between Pinyin with tone marks and Pinyin with tone numbers.",
   "keywords": [
     "chinese",
