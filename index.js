@@ -41,56 +41,51 @@ const convertMandarin = async (text, options = {}) => {
 }
 
 const convertPinyin = async (text, type, options) => {
-	options.keepSpaces = options.segmented
-	let words = await splitPinyin(text, options)
+	let words = splitPinyin(text, options.everything)
 	if (options.numbered && type !== 'pinyin-numbered') {
-		words = utils.markToNumber(words)
+		if (options.everything) {
+			words = words.map(word => typeof word !== 'string' ? utils.markToNumber(word, false) : word)
+		} else {
+			words = utils.markToNumber(words, false)
+		}
 	}
 	else if (options.marked && type !== 'pinyin-marked') {
-		words = utils.numberToMark(words)
-	}
-	else if (!options.numbered && !options.numbered) {
-		if (type === 'pinyin-marked') {
-			words = utils.markToNumber(words)
-		}
-		if (type === 'pinyin-numbered') {
+		if (options.everything) {
+			words = words.map(word => typeof word !== 'string' ? utils.numberToMark(word) : word)
+		} else {
 			words = utils.numberToMark(words)
 		}
 	}
-	return words.join(options.segmented ? '' : ' ')
+	else if (!options.numbered) {
+		if (type === 'pinyin-marked') {
+			if (options.everything) {
+				words = words.map(word => typeof word !== 'string' ? utils.markToNumber(word, false) : word)
+			} else {
+				words = utils.markToNumber(words, false)
+			}
+		}
+		if (type === 'pinyin-numbered') {
+			if (options.everything) {
+				words = words.map(word => typeof word !== 'string' ? utils.numberToMark(word) : word)
+			} else {
+				words = utils.numberToMark(words)
+			}
+		}
+	}
+	return words.join(options.everything ? '' : ' ')
 }
 
 const convert = async (text, options = {}) => {
 	const type = await pinyinOrHanzi(text)
-	if (type === 'other') {
+	if (type === 'other' || type === 'zhuyin') {
 		return text
 	}
 	if (type === 'mandarin') {
 		return convertMandarin(text, options)
 	}
-	if (type.substr(0, 6) ===  'pinyin') {
+	if (type.substr(0, 6) === 'pinyin') {
 		return convertPinyin(text, type, options)
 	}
 }
 
 module.exports = convert
-
-// convert('我的猫喜欢吃苹果 1')
-// .then(data => console.log(JSON.stringify(data)))
-// .catch(console.error)
-
-// convert('My cat likes to eat apples: 《我的猫喜欢吃苹果》.')
-// .then(data => console.log(JSON.stringify(data)))
-// .catch(console.error)
-
-// convert('My cat likes to eat apples: 《我的猫喜欢吃苹果》.', { segmented: true })
-// .then(data => console.log(JSON.stringify(data)))
-// .catch(console.error)
-
-// convert('wǒ de māo xǐhuan chī píngguǒ')
-// .then(data => console.log(JSON.stringify(data)))
-// .catch(console.error)
-
-// convert('wǒ de māo xǐhuan chī píngguǒ', { segmented: true })
-// .then(data => console.log(JSON.stringify(data)))
-// .catch(console.error)
