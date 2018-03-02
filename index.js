@@ -6,36 +6,34 @@ const pinyinOrHanzi = require('pinyin-or-hanzi')
 const utils = require('pinyin-utils')
 
 const convertMandarin = async (text, options = {}) => {
-	let lastType = null
-	return (await hanziToPinyin(text, options.numbered)).reduce((list, token) => {
-		const lastIndex = list.length - 1
-		if (typeof token === 'string') { // token is a string
-			if (typeof list[lastIndex] === 'string') {
-				list[lastIndex] += token
+	const data = await hanziToPinyin(text, options.numbered)
+	return data.reduce((list, token, i) => {
+		if (typeof token === 'string') {
+			if (typeof list[list.length - 1] === 'string') {
+				list[list.length - 1] += token
 			} else {
 				list.push(token)
 			}
-		} else if (token.length === 1) { // token is one word
-			const word = options.segmented ? token[0].replace(/\s/g, '') : token[0]
-			if (typeof list[lastIndex] === 'string') {
-				if (lastType !== 'string') {
-					list[lastIndex] += ' '
-				}
-				list[lastIndex] += word
-			} else {
-				if (list.length === 0) {
-					list.push(word)
+		} else {
+			token = token.map(w => options.segmented ? w.replace(/\s/g, '') : w)
+			if (token.length === 1) {
+				if (typeof data[i - 1] === 'string') {
+					list[list.length - 1] += token[0]
+				} else if (typeof list[list.length - 1] === 'string') {
+					list[list.length - 1] += ' ' + token[0]
 				} else {
-					list.push(' ' + word) // add space after token
+					list.push((i > 0 ? ' ' : '') + token[0])
 				}
+			} else {
+				if (i === 0 || typeof list[list.length - 1] === 'string') {
+					if (typeof data[i - 1] !== 'string')
+						list[list.length - 1] += ' '
+					list.push(token)
+				} else [
+					list.push(' ', token)
+				]
 			}
-		} else { // token has multiple pinyins
-			if (typeof list[lastIndex] === 'string') {
-				list[lastIndex] += ' ' // add space before token
-			}
-			list.push(token)
 		}
-		lastType = typeof token
 		return list
 	}, [])
 }
@@ -89,3 +87,7 @@ const convert = async (text, options = {}) => {
 }
 
 module.exports = convert
+
+convert('我的猫喜欢喝牛奶"', { segmented: true })
+.then(data => console.log(data))
+.catch(console.error)
