@@ -24,7 +24,7 @@
     "test": "mocha --timeout 20000"
   },
   "dependencies": {
-    "hanzi-to-pinyin": "^1.7.0",
+    "hanzi-to-pinyin": "^1.8.0",
     "pinyin-or-hanzi": "^1.4.0",
     "pinyin-split": "^1.4.0",
     "pinyin-utils": "^1.0.8"
