@@ -7,8 +7,7 @@
     "convert",
     "hanzi",
     "mandarin",
-    "pinyin",
-    "tone"
+    "pinyin"
   ],
   "homepage": "https://github.com/pepebecker/pinyin-convert#readme",
   "bugs": {
@@ -22,21 +21,16 @@
     "url": "https://github.com/pepebecker/pinyin-convert.git"
   },
   "scripts": {
-    "cover": "istanbul cover _mocha",
-    "coveralls": "npm run cover -- --report lcovonly && cat ./coverage/lcov.info | coveralls",
-    "test": "mocha"
+    "test": "mocha --timeout 20000"
   },
   "dependencies": {
-    "hanzi-to-pinyin": "^1.0.9",
+    "hanzi-to-pinyin": "^1.1.0",
     "pinyin-or-hanzi": "^1.1.0",
     "pinyin-split": "^1.0.8",
     "pinyin-utils": "^1.0.8"
   },
   "devDependencies": {
-    "coveralls": "^3.0.0",
-    "istanbul": "^0.4.5",
-    "mocha": "^5.0.1",
-    "mocha-lcov-reporter": "^1.3.0",
+    "mocha": "^5.1.1",
     "should": "^13.2.1"
   },
   "engines": {
