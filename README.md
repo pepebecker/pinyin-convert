@@ -21,17 +21,33 @@ npm install pinyin-convert
 ```js
 const convert = require('pinyin-convert')
 
-convert('wǒ de māo xǐhuān hē niúnǎi', {keepSpaces: true})
-.then(console.log) // wo3 de mao1 xi3huan1 he1 niu2nai3
+convert('Test: wǒ de māo xǐhuān hē niúnǎi')
+.then(console.log) // Te wo3 de mao1 xi3 huan1 he1 niu2 nai3
 
-convert('wo3 de mao1 xi3huan1 he1 niu2nai3', {keepSpaces: true})
-.then(console.log) // wǒ de māo xǐhuān hē niúnǎi
+convert('Test: wo3 de mao1 xi3huan1 he1 niu2nai3')
+.then(console.log) // Te wǒ de māo xǐ huān hē niú nǎi
+
+convert('Test: wǒ de māo xǐhuān hē niúnǎi', { everything: true })
+.then(console.log) // Test: wo3 de mao1 xi3huan1 he1 niu2nai3
+
+convert('Test: wo3 de mao1 xi3huan1 he1 niu2nai3', { everything: true })
+.then(console.log) // Test: wǒ de māo xǐhuān hē niúnǎi
 
 convert('我的猫喜欢喝牛奶')
-.then(console.log) // wǒ de māo xǐ huān hē niú nǎi
+.then(console.log)
+// [ 'wǒ ', [ 'de', 'dī', 'dí', 'dì' ], ' māo xǐ huan ', [ 'hē', 'hè' ], ' niú nǎi' ]
 
-convert('我的猫喜欢喝牛奶', {numbered: true})
-.then(console.log) // wo3 de mao1 xi3 huan1 he1 niu2 nai3
+convert('我的猫喜欢喝牛奶', { segmented: true })
+.then(console.log)
+// [ 'wǒ ', [ 'de', 'dī', 'dí', 'dì' ], ' māo xǐhuan ', [ 'hē', 'hè' ], ' niúnǎi' ]
+
+convert('我的猫喜欢喝牛奶', { numbered: true, segmented: true })
+.then(console.log)
+// [ 'wo3 ', ['de5', 'di1', 'di2', 'di4'], ' mao1 xǐ5huan1 ', ['he1', 'he4'], ' niu2nai3' ]
+
+convert('Test: 我的猫喜欢喝牛奶', { everything: true, segmented: true })
+.then(console.log)
+// [ 'test: wǒ ', [ 'de', 'dī', 'dí', 'dì' ], ' māo xǐhuan ', [ 'hē', 'hè' ], ' niúnǎi' ]
 ```
 
 ## Related
