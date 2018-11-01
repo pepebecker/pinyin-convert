@@ -6,7 +6,7 @@ const pinyinOrHanzi = require('pinyin-or-hanzi')
 const utils = require('pinyin-utils')
 
 const convertPinyin = async (text, type, opts) => {
-	let words = splitPinyin(text, opts.everything)
+	let words = splitPinyin(text, opts.everything, opts.everything)
 	if (opts.numbered && type !== 'pinyin-numbered') {
 		if (opts.everything) {
 			words = words.map(word => typeof word !== 'string' ? utils.markToNumber(word, false) : word)
