@@ -28,12 +28,12 @@ describe('Convert Mandarin to Pinyin', () => {
 describe('Convert between marked and numbered Pinyin', () => {
 	it('should convert tone marks to tone numbers', () => {
 		return convert('wǒ de māo xǐhuan hē niúnǎi').then(data => {
-			data.should.equal('wo3 de mao1 xi3 huan he1 niu2 nai3')
+			data.should.equal('wo3 de mao1 xi3huan he1 niu2nai3')
 		})
 	})
 	it('should convert tone numbers to tone marks', () => {
 		return convert('wo3 de mao1 xi3huan5 he1 niu2nai3').then(data => {
-			data.should.equal('wǒ de māo xǐ huan hē niú nǎi')
+			data.should.equal('wǒ de māo xǐhuan hē niúnǎi')
 		})
 	})
 	it('should convert tone marks to tone numbers', () => {
