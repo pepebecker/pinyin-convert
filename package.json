@@ -24,10 +24,10 @@
     "test": "mocha --timeout 20000"
   },
   "dependencies": {
-    "hanzi-to-pinyin": "^1.18.0",
-    "pinyin-or-hanzi": "^1.15.0",
-    "pinyin-split": "^1.25.0",
-    "pinyin-utils": "^1.13.0"
+    "hanzi-to-pinyin": "^1.19.0",
+    "pinyin-or-hanzi": "^1.16.0",
+    "pinyin-split": "^1.27.0",
+    "pinyin-utils": "^1.14.0"
   },
   "devDependencies": {
     "mocha": "^5.2.0",
