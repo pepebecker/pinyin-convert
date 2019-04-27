@@ -27,7 +27,7 @@
     "hanzi-to-pinyin": "^1.19.0",
     "pinyin-or-hanzi": "^1.16.0",
     "pinyin-split": "^1.27.0",
-    "pinyin-utils": "^1.14.0"
+    "pinyin-utils": "^1.39.0"
   },
   "devDependencies": {
     "mocha": "^5.2.0",
